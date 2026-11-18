@@ -5,339 +5,119 @@
   "sources": "BBC, Reuters, AP, AFP, Al Jazeera, NYT, Guardian, DW, France 24, Anadolu, NPR",
   "leads": [
     {
-      "id": 1,
-      "region": "asia",
-      "beat": "Diplomacy",
-      "art": "tarmac",
+      "id": 1, "region": "asia", "beat": "Diplomacy", "art": "tarmac",
       "head": "Xi hugs Trump on arrival in China",
       "deck": "Trump also greets Putin in Shenzhen ahead of Thursday’s first US–China–Russia summit.",
-      "pin": [
-        22.54,
-        114.06
-      ],
+      "pin": [22.54, 114.06],
       "src": "https://www.bbc.co.uk/news/articles/ck9d75x5wwwwo"
     },
     {
-      "id": 2,
-      "region": "mideast",
-      "beat": "Iran war",
-      "art": "gulf",
+      "id": 2, "region": "mideast", "beat": "Iran war", "art": "gulf",
       "head": "Iran fires drones at Kuwait and Bahrain",
       "deck": "Iran says it aimed at a US air base; both repel the attacks after a US strike on Qeshm.",
-      "pin": [
-        29.35,
-        47.52
-      ],
+      "pin": [29.35, 47.52],
       "src": "https://www.bbc.co.uk/news/articles/cw4gn9jeqjq7o"
     },
     {
-      "id": 3,
-      "region": "americas",
-      "beat": "US politics",
-      "art": "senate",
+      "id": 3, "region": "americas", "beat": "US politics", "art": "senate",
       "head": "Peltola wins Alaska; Senate 56–44",
       "deck": "The last midterm race goes Democratic after two weeks of counting, ousting Dan Sullivan.",
-      "pin": [
-        61.2,
-        -149.9
-      ],
+      "pin": [61.2, -149.9],
       "src": "https://www.bbc.co.uk/news/articles/cqev3v2ygzlvo"
     }
   ],
   "tiles": [
     {
-      "id": 4,
-      "region": "asia",
-      "beat": "APEC",
-      "art": "flags-cn-ru",
+      "id": 4, "region": "asia", "beat": "APEC", "art": "flags-cn-ru",
       "head": "Xi and Putin vow to ‘lead’ a multipolar world",
       "deck": "Putin calls the West ‘former hegemons’.",
-      "pin": [
-        22.54,
-        114.06
-      ],
+      "pin": [22.54, 114.06],
       "src": "https://www.aljazeera.com/news/2026/11/18/president-xi-says-russia-and-china-should-lead-push-to-multipolar-world"
     },
     {
-      "id": 5,
-      "region": "mideast",
-      "beat": "Yemen",
-      "art": "jets",
+      "id": 5, "region": "mideast", "beat": "Yemen", "art": "jets",
       "head": "Saudi coalition hits 60 Houthi sites as rebels push on Aden",
       "deck": "‘Fierce battles’ in Taiz.",
-      "pin": [
-        12.8,
-        45.03
-      ],
+      "pin": [12.8, 45.03],
       "src": "https://www.aljazeera.com/news/2026/11/18/houthis-advance-on-aden-as-saudi-coalition-targets-military-sites"
     },
     {
-      "id": 6,
-      "region": "mideast",
-      "beat": "Gaza",
-      "art": "tents",
+      "id": 6, "region": "mideast", "beat": "Gaza", "art": "tents",
       "head": "Board of Peace warns the Gaza truce may collapse",
       "deck": "Report to the UN says both sides miss commitments.",
-      "pin": [
-        31.45,
-        34.4
-      ],
+      "pin": [31.45, 34.4],
       "src": "https://www.aljazeera.com/news/2026/11/18/board-of-peace-warns-gaza-ceasefire-faces-imminent-collapse-without-action"
     },
     {
-      "id": 7,
-      "region": "europe",
-      "beat": "Economy",
-      "art": "pump",
+      "id": 7, "region": "europe", "beat": "Economy", "art": "pump",
       "head": "UK inflation climbs to 3.6%, a one-year high",
       "deck": "Record fuel prices; energy bills seen up £443.",
-      "pin": [
-        51.5,
-        -0.12
-      ],
+      "pin": [51.5, -0.12],
       "src": "https://www.bbc.co.uk/news/articles/cmy498kdkx3xo"
     },
     {
-      "id": 8,
-      "region": "europe",
-      "beat": "Ukraine",
-      "art": "eu",
+      "id": 8, "region": "europe", "beat": "Ukraine", "art": "eu",
       "head": "EU proposes €45bn loan to fund Ukraine in 2027",
       "deck": "Von der Leyen's plan needs EU states' approval.",
-      "pin": [
-        50.85,
-        4.35
-      ],
+      "pin": [50.85, 4.35],
       "src": "https://www.france24.com/en/europe/20261118-eu-proposes-new-%E2%82%AC45-billion-ukraine-loan-to-be-repaid-by-russia"
     },
     {
-      "id": 9,
-      "region": "americas",
-      "beat": "Tech",
-      "art": "chip",
+      "id": 9, "region": "americas", "beat": "Tech", "art": "chip",
       "head": "Nvidia doubles revenue to $115.8bn",
       "deck": "Board rules out reinstating ex-CEO Jensen Huang.",
-      "pin": [
-        37.35,
-        -121.95
-      ],
+      "pin": [37.35, -121.95],
       "src": "https://www.aljazeera.com/economy/2026/11/18/nvidia-shoots-down-calls-for-jensen-huangs-return-amid-strong-earnings"
     },
     {
-      "id": 10,
-      "region": "global",
-      "beat": "Culture",
-      "art": "controller",
+      "id": 10, "region": "global", "beat": "Culture", "art": "controller",
       "head": "GTA VI goes on sale at midnight after 13 years",
       "deck": "Critics hail a ‘masterpiece’; 14.9m pre-orders.",
       "pin": null,
       "src": "https://aa.com.tr/en/world/morning-briefing-nov-18-2026/4128568"
     },
     {
-      "id": 11,
-      "region": "africa",
-      "beat": "Security",
-      "art": "nigeria",
+      "id": 11, "region": "africa", "beat": "Security", "art": "nigeria",
       "head": "All 36 Nigerian states back creating state police",
       "deck": "Change now awaits President Tinubu's assent.",
-      "pin": [
-        9.06,
-        7.49
-      ],
+      "pin": [9.06, 7.49],
       "src": "https://www.bbc.co.uk/news/articles/cr20vpq58093o"
     },
     {
-      "id": 12,
-      "region": "global",
-      "beat": "Space",
-      "art": "voyager",
+      "id": 12, "region": "global", "beat": "Space", "art": "voyager",
       "head": "Voyager 1 reaches one light-day from Earth",
       "deck": "Its signals now take 24 hours to reach home.",
       "pin": null,
       "src": "https://earthsky.org/space/voyager-1-1-light-day-from-earth-november-17-18-2026/"
     },
     {
-      "id": 13,
-      "region": "americas",
-      "beat": "Argentina",
-      "art": "falklands",
+      "id": 13, "region": "americas", "beat": "Argentina", "art": "falklands",
       "head": "Argentine deputies debate Falklands sovereignty bill",
       "deck": "Princess Anne's visit called a ‘provocation’.",
-      "pin": [
-        -34.6,
-        -58.38
-      ],
+      "pin": [-34.6, -58.38],
       "src": "https://en.mercopress.com/"
     }
   ],
   "briefs": [
-    {
-      "region": "asia",
-      "place": "Manila",
-      "text": "Trump and Marcos announce trade deal",
-      "pin": [
-        14.6,
-        121.0
-      ]
-    },
-    {
-      "region": "americas",
-      "place": "Shenzhen",
-      "text": "Carney and Trump hold surprise trade talks",
-      "pin": null
-    },
-    {
-      "region": "asia",
-      "place": "Shenzhen",
-      "text": "Xi meets Japan's Takaichi amid feud",
-      "pin": null
-    },
-    {
-      "region": "asia",
-      "place": "Japan",
-      "text": "Jets scramble as Russian bombers fly by",
-      "pin": [
-        35.7,
-        139.7
-      ]
-    },
-    {
-      "region": "asia",
-      "place": "Yongbyon",
-      "text": "IAEA: N. Korea enrichment annex shell done",
-      "pin": [
-        39.8,
-        125.8
-      ]
-    },
-    {
-      "region": "europe",
-      "place": "Krasnodar",
-      "text": "Ukraine targets Russian oil refineries",
-      "pin": [
-        45.0,
-        39.0
-      ]
-    },
-    {
-      "region": "mideast",
-      "place": "West Bank",
-      "text": "Israel delays E1 settlement contracts",
-      "pin": [
-        31.9,
-        35.25
-      ]
-    },
-    {
-      "region": "mideast",
-      "place": "Baghdad",
-      "text": "Iran's Quds chief Qaani holds talks",
-      "pin": [
-        33.3,
-        44.4
-      ]
-    },
-    {
-      "region": "europe",
-      "place": "Vienna",
-      "text": "IAEA's Grossi backs US–Saudi nuclear deal",
-      "pin": [
-        48.2,
-        16.4
-      ]
-    },
-    {
-      "region": "europe",
-      "place": "Berlin",
-      "text": "Coalition agrees electricity tax cut",
-      "pin": [
-        52.5,
-        13.4
-      ]
-    },
-    {
-      "region": "asia",
-      "place": "Myanmar",
-      "text": "Min Aung Hlaing to review ASEAN ties",
-      "pin": [
-        19.75,
-        96.1
-      ]
-    },
-    {
-      "region": "asia",
-      "place": "Thailand",
-      "text": "Arsenic from Myanmar mines taints Mekong",
-      "pin": [
-        20.3,
-        100.1
-      ]
-    },
-    {
-      "region": "asia",
-      "place": "Seoul",
-      "text": "AI cheating scandal upends exam season",
-      "pin": [
-        37.57,
-        126.98
-      ]
-    },
-    {
-      "region": "africa",
-      "place": "Accra",
-      "text": "$60m presidential jet sparks outrage",
-      "pin": [
-        5.6,
-        -0.19
-      ]
-    },
-    {
-      "region": "oceania",
-      "place": "PNG",
-      "text": "Rio Tinto to pay $250m over mine damage",
-      "pin": [
-        -6.2,
-        155.5
-      ]
-    },
-    {
-      "region": "oceania",
-      "place": "Australia",
-      "text": "Bancroft: whole team knew of sandpaper plot",
-      "pin": [
-        -33.9,
-        151.2
-      ]
-    },
-    {
-      "region": "oceania",
-      "place": "Hobart",
-      "text": "Duckett ton seals England ODI series",
-      "pin": [
-        -42.9,
-        147.3
-      ]
-    },
-    {
-      "region": "americas",
-      "place": "California",
-      "text": "Waymo pulls robotaxis off US freeways",
-      "pin": null
-    },
-    {
-      "region": "americas",
-      "place": "US",
-      "text": "Rubio: ‘zero evidence’ tech outages linked",
-      "pin": [
-        38.9,
-        -77.0
-      ]
-    },
-    {
-      "region": "global",
-      "place": "Tech",
-      "text": "AI start-up finds critical flaw in Java",
-      "pin": null
-    }
+    { "region": "asia", "place": "Manila", "text": "Trump and Marcos announce trade deal", "pin": [14.6, 121.0] },
+    { "region": "americas", "place": "Shenzhen", "text": "Carney and Trump hold surprise trade talks", "pin": null },
+    { "region": "asia", "place": "Shenzhen", "text": "Xi meets Japan's Takaichi amid feud", "pin": null },
+    { "region": "asia", "place": "Japan", "text": "Jets scramble as Russian bombers fly by", "pin": [35.7, 139.7] },
+    { "region": "asia", "place": "Yongbyon", "text": "IAEA: N. Korea enrichment annex shell done", "pin": [39.8, 125.8] },
+    { "region": "europe", "place": "Krasnodar", "text": "Ukraine targets Russian oil refineries", "pin": [45.0, 39.0] },
+    { "region": "mideast", "place": "West Bank", "text": "Israel delays E1 settlement contracts", "pin": [31.9, 35.25] },
+    { "region": "mideast", "place": "Baghdad", "text": "Iran's Quds chief Qaani holds talks", "pin": [33.3, 44.4] },
+    { "region": "europe", "place": "Vienna", "text": "IAEA's Grossi backs US–Saudi nuclear deal", "pin": [48.2, 16.4] },
+    { "region": "europe", "place": "Berlin", "text": "Coalition agrees electricity tax cut", "pin": [52.5, 13.4] },
+    { "region": "asia", "place": "Myanmar", "text": "Min Aung Hlaing to review ASEAN ties", "pin": [19.75, 96.1] },
+    { "region": "asia", "place": "Thailand", "text": "Arsenic from Myanmar mines taints Mekong", "pin": [20.3, 100.1] },
+    { "region": "asia", "place": "Seoul", "text": "AI cheating scandal upends exam season", "pin": [37.57, 126.98] },
+    { "region": "africa", "place": "Accra", "text": "$60m presidential jet sparks outrage", "pin": [5.6, -0.19] },
+    { "region": "oceania", "place": "PNG", "text": "Rio Tinto to pay $250m over mine damage", "pin": [-6.2, 155.5] },
+    { "region": "oceania", "place": "Australia", "text": "Bancroft: whole team knew of sandpaper plot", "pin": [-33.9, 151.2] },
+    { "region": "oceania", "place": "Hobart", "text": "Duckett ton seals England ODI series", "pin": [-42.9, 147.3] },
+    { "region": "americas", "place": "California", "text": "Waymo pulls robotaxis off US freeways", "pin": null },
+    { "region": "americas", "place": "US", "text": "Rubio: ‘zero evidence’ tech outages linked", "pin": [38.9, -77.0] },
+    { "region": "global", "place": "Tech", "text": "AI start-up finds critical flaw in Java", "pin": null }
   ]
 }
