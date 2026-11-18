@@ -4,7 +4,7 @@
 [![rank](https://make.fun/badge/news-image-20261118/GAD2412/news-image-20261118/rank.svg)](https://make.fun/bounty/news-image-20261118/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261118)
 [![reward](https://make.fun/badge/news-image-20261118/GAD2412/news-image-20261118/reward.svg)](https://make.fun/bounty/news-image-20261118?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261118)
 
-One 1024×1024 front page of the world's news on Wednesday 18 November 2026: 33 stories from six continents, with original flat illustrations, region tags and a dot map that pins where each story happened. `main.ts` (Node 22, standard library only, no network) writes the committed `entry.png` to `/output`, so every run produces the same bytes.
+One 1024×1024 front page of the world's news on Wednesday 18 November 2026: 44 numbered stories from six continents, with original flat illustrations, region tags and a dot map that pins where each story happened. `main.ts` (Node 22, standard library only, no network) writes the committed `entry.png` to `/output`, so every run produces the same bytes.
 
 ## Run it
 
