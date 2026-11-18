@@ -52,7 +52,7 @@ const flagCN = (x, y, w, h) =>
 const flagRU = (x, y, w, h) =>
   `<rect x="${x}" y="${y}" width="${w}" height="${h / 3}" fill="#fff"/><rect x="${x}" y="${y + h / 3}" width="${w}" height="${h / 3}" fill="#0039a6"/><rect x="${x}" y="${y + (2 * h) / 3}" width="${w}" height="${h / 3}" fill="#d52b1e"/>` + frame(x, y, w, h);
 const pill = (x, y, text, bg = '#13213c', size = 10) =>
-  `<rect x="${x}" y="${y}" width="${(text.length * size * 0.66 + 12).toFixed(0)}" height="${size + 7}" rx="3" fill="${bg}"/><text x="${x + 6}" y="${y + size + 2}" font-size="${size}" font-weight="700" fill="#fff" letter-spacing="0.5">${text}</text>`;
+  `<rect x="${x}" y="${y}" width="${(text.length * size * 0.71 + 12).toFixed(0)}" height="${size + 7}" rx="3" fill="${bg}"/><text x="${x + 6}" y="${y + size + 2}" font-size="${size}" font-weight="700" fill="#fff" letter-spacing="0.5">${text}</text>`;
 const label = (x, y, t, size = 10, fill = '#3a2a12', anchor = 'start') =>
   `<text x="${x}" y="${y}" font-size="${size}" font-weight="700" fill="${fill}" letter-spacing="0.6" text-anchor="${anchor}">${t}</text>`;
 const jet = (x, y, k = 1) => `<polygon transform="translate(${x} ${y}) scale(${k})" points="0,4 26,2 32,4 26,6 0,4 12,4 6,-6 10,-6 18,4 10,14 6,14 12,4" fill="#374151"/>`;
@@ -83,36 +83,39 @@ const LEAD_ART = {
     const drone = (x, y, a) => `<g transform="translate(${x} ${y}) rotate(${a})"><polygon points="0,-5 9,0 0,5 2,0" fill="#3b0d0d"/></g>`;
     s += drone(150, 15, 196) + drone(212, 76, 132) + burst(58, 31, 11) + burst(190, 94, 9) + burst(282, 80, 9);
     s += `<path d="M322,104 L292,86" stroke="#1d4ed8" stroke-width="1.6" stroke-dasharray="4 3"/>`;
-    s += label(250, 24, 'IRAN', 13) + label(10, 54, 'KUWAIT', 11) + label(132, 128, 'BAHRAIN', 11) + label(254, 104, 'QESHM', 10, '#0b3a66');
+    s += label(250, 30, 'IRAN', 13) + label(10, 54, 'KUWAIT', 11) + label(132, 123, 'BAHRAIN', 11) + label(254, 104, 'QESHM', 10, '#0b3a66');
     return s + pill(8, 76, 'IRAN SAYS: US BASE TARGETED', '#7f1d1d', 9.5) + pill(8, 96, 'KUWAIT: NO DAMAGE REPORTED', '#13213c', 9.5);
   },
-  senate() {
-    let s = `<rect width="322" height="140" fill="#e9eef6"/>`;
-    const rows = 5, r0 = 52, r1 = 96, cx = 161, cy = 112;
-    const radii = Array.from({ length: rows }, (_, i) => r0 + ((r1 - r0) * i) / (rows - 1));
-    const total = radii.reduce((a, b) => a + b, 0);
-    const counts = radii.map((r) => Math.round((100 * r) / total));
-    counts[rows - 1] += 100 - counts.reduce((a, b) => a + b, 0);
-    const seats = [];
-    radii.forEach((r, i) => { for (let k = 0; k < counts[i]; k++) seats.push({ a: Math.PI - (Math.PI * k) / (counts[i] - 1), r }); });
-    seats.sort((p, q) => q.a - p.a || p.r - q.r);
-    seats.forEach((p, i) => (s += `<circle cx="${(cx + p.r * Math.cos(p.a)).toFixed(1)}" cy="${(cy - p.r * Math.sin(p.a)).toFixed(1)}" r="4" fill="${i < 56 ? '#1d4ed8' : '#c1272d'}"/>`));
-    s += `<text x="${cx}" y="${cy - 4}" text-anchor="middle" font-size="25" font-weight="800" fill="#111827">56–44</text>`;
-    s += label(10, 22, 'DEM 56', 11, '#1d4ed8') + label(312, 22, 'REP 44', 11, '#c1272d', 'end');
-    return s + label(cx, 130, 'US SENATE FROM JANUARY · ALASKA FLIPS', 10, '#374151', 'middle');
+  house() {
+    let s = `<rect width="322" height="140" fill="#e6edf6"/><rect y="112" width="322" height="28" fill="#b9c7a5"/>`;
+    // the Capitol: two wings, a columned centre, the drum and the dome
+    s += `<rect x="18" y="84" width="196" height="30" fill="#f8f7f2" stroke="#b5bcc6"/>`;
+    for (let x = 24; x < 210; x += 9) if (x < 76 || x > 152) s += `<rect x="${x}" y="91" width="4" height="8" fill="#c9cfd8"/><rect x="${x}" y="103" width="4" height="7" fill="#c9cfd8"/>`;
+    s += `<rect x="78" y="70" width="76" height="44" fill="#fbfaf6" stroke="#b5bcc6"/><polygon points="74,71 116,57 158,71" fill="#f1efe8" stroke="#b5bcc6"/>`;
+    for (let i = 0; i < 8; i++) s += `<rect x="${(82 + i * 9.4).toFixed(1)}" y="74" width="3.6" height="38" fill="#d6dbe2"/>`;
+    s += `<rect x="94" y="40" width="44" height="18" fill="#f4f2ec" stroke="#b5bcc6"/>`;
+    for (let x = 97; x < 136; x += 6) s += `<rect x="${x}" y="43" width="2.6" height="13" fill="#d6dbe2"/>`;
+    s += `<path d="M90,42 Q116,-4 142,42 Z" fill="#fbfaf6" stroke="#b5bcc6"/><rect x="112" y="12" width="8" height="12" fill="#fbfaf6" stroke="#b5bcc6"/><circle cx="116" cy="9" r="3" fill="#8a94a3"/>`;
+    s += `<polygon points="84,114 148,114 158,124 74,124" fill="#e2e0d8"/>`;
+    // a gavel over its sound block
+    s += `<g transform="rotate(-28 262 70)"><rect x="232" y="64" width="60" height="7" rx="3" fill="#8b5a2b"/><rect x="284" y="50" width="16" height="34" rx="4" fill="#6b3f1d"/></g>`;
+    s += `<rect x="236" y="98" width="56" height="12" rx="3" fill="#6b3f1d"/>`;
+    return s + pill(148, 18, 'DEMOCRATS’ NOMINEE', '#1d4ed8') + label(116, 124, 'US HOUSE · FULL VOTE IN JANUARY', 10, '#374151', 'middle');
   },
 };
 
 // ---------- tile drawings (104 x 70) ----------
 const TILE_ART = {
-  cnru: () => `<rect width="104" height="70" fill="#f3e9dc"/>` + flagCN(8, 12, 40, 27) + frame(8, 12, 40, 27) + flagRU(56, 12, 40, 27) + label(52, 58, 'SHENZHEN', 9, '#6b4f2a', 'middle'),
-  jets: () => `<rect width="104" height="70" fill="#dfe6ec"/><rect y="52" width="104" height="18" fill="#cdb98f"/>` + burst(24, 53, 9) + burst(54, 56, 7) + burst(84, 52, 9) + jet(8, 12, 0.85) + jet(58, 24, 0.85),
-  tents() {
-    let s = `<rect width="104" height="70" fill="#e5dccd"/><rect y="58" width="104" height="12" fill="#b9a98a"/>`;
-    for (const x of [4, 34, 64]) s += `<polygon points="${x},59 ${x + 16},34 ${x + 32},59" fill="#f6f2ea" stroke="#9c907c"/><polygon points="${x + 13},59 ${x + 16},48 ${x + 19},59" fill="#6b6152"/>`;
-    for (let x = 4; x < 76; x += 9) s += `<line x1="${x}" y1="${4 + (x % 3) * 4}" x2="${x - 3}" y2="${12 + (x % 3) * 4}" stroke="#5c8fb0" stroke-width="1.2"/>`;
-    return s + `<rect x="80" y="6" width="19" height="25" fill="#fff" stroke="#9c907c"/><text x="89.5" y="26" text-anchor="middle" font-size="17" font-weight="800" fill="#b91c1c">!</text>`;
+  yellowline() {
+    let s = `<rect width="104" height="70" fill="#eadfc8"/><rect y="50" width="104" height="20" fill="#d8c8a4"/>`;
+    s += `<line x1="58" y1="0" x2="58" y2="70" stroke="#e8b10e" stroke-width="3" stroke-dasharray="6 4"/>`;
+    // a tank rolling right, its gun already past the line; tents on the far side
+    s += `<rect x="24" y="42" width="40" height="11" rx="5.5" fill="#3f4a3c"/><rect x="28" y="33" width="32" height="10" rx="2" fill="#5b6b4f"/><rect x="38" y="26" width="16" height="9" rx="3" fill="#4a5a40"/><rect x="53" y="29" width="22" height="3" fill="#4a5a40"/>`;
+    for (const x of [29, 37, 45, 53, 59]) s += `<circle cx="${x}" cy="47.5" r="3" fill="#232a22"/>`;
+    for (const x of [76, 92]) s += `<polygon points="${x - 8},50 ${x},37 ${x + 8},50" fill="#f6f2ea" stroke="#9c907c"/>`;
+    return s + label(6, 13, 'YELLOW LINE', 7.5, '#8a6a00');
   },
+  jets: () => `<rect width="104" height="70" fill="#dfe6ec"/><rect y="52" width="104" height="18" fill="#cdb98f"/>` + burst(24, 53, 9) + burst(54, 56, 7) + burst(84, 52, 9) + jet(8, 12, 0.85) + jet(58, 24, 0.85),
   eu() {
     let s = `<rect width="104" height="70" fill="#e8ecf7"/><rect x="27" y="5" width="50" height="33" fill="#1f3f99"/>`;
     for (let i = 0; i < 12; i++) s += star(52 + 10.5 * Math.cos((i * Math.PI) / 6), 21.5 + 10.5 * Math.sin((i * Math.PI) / 6), 2.3, '#ffd23f');
@@ -123,13 +126,30 @@ const TILE_ART = {
     `<path d="M28,20 Q38,20 38,32 L38,44" fill="none" stroke="#1f2937" stroke-width="2.6"/><rect x="35" y="42" width="6" height="5" fill="#1f2937"/>` +
     `<polyline points="48,50 60,44 72,46 84,32 96,24" fill="none" stroke="#b91c1c" stroke-width="2.6" stroke-linejoin="round"/><polygon points="97,23 88,22 93,30" fill="#b91c1c"/>` +
     `<text x="100" y="66" text-anchor="end" font-size="15" font-weight="800" fill="#1f2937">3.6%</text>`,
-  chip() {
-    let s = `<rect width="104" height="70" fill="#e6eefc"/><rect x="36" y="6" width="32" height="32" rx="3" fill="#1f2937"/><rect x="43" y="13" width="18" height="18" fill="none" stroke="#9ca3af" stroke-width="1.3"/>`;
-    for (let i = 0; i < 4; i++) {
-      const p = 40 + i * 7;
-      s += `<rect x="${p}" y="2" width="2.5" height="4" fill="#6b7280"/><rect x="${p}" y="38" width="2.5" height="4" fill="#6b7280"/><rect x="32" y="${p - 30}" width="4" height="2.5" fill="#6b7280"/><rect x="68" y="${p - 30}" width="4" height="2.5" fill="#6b7280"/>`;
+  measles() {
+    let s = `<rect width="104" height="70" fill="#fbe9e7"/><g transform="translate(28 34)">`;
+    for (let i = 0; i < 12; i++) {
+      const c = Math.cos((i * Math.PI) / 6), d = Math.sin((i * Math.PI) / 6);
+      s += `<line x1="${(15 * c).toFixed(1)}" y1="${(15 * d).toFixed(1)}" x2="${(20 * c).toFixed(1)}" y2="${(20 * d).toFixed(1)}" stroke="#b91c1c" stroke-width="2"/><circle cx="${(21.5 * c).toFixed(1)}" cy="${(21.5 * d).toFixed(1)}" r="2.6" fill="#b91c1c"/>`;
     }
-    return s + `<text x="52" y="62" text-anchor="middle" font-size="17" font-weight="800" fill="#1d4ed8">$115.8bn</text>`;
+    s += `<circle r="15" fill="#e05252"/><circle cx="-5" cy="-4" r="3" fill="#f6b4b4"/><circle cx="5" cy="5" r="2.4" fill="#f6b4b4"/><circle cx="6" cy="-6" r="1.8" fill="#f6b4b4"/></g>`;
+    return s + `<text x="79" y="35" text-anchor="middle" font-size="22" font-weight="800" fill="#7f1d1d">26</text>` + label(79, 48, 'YEARS', 9, '#7f1d1d', 'middle') + label(79, 61, 'ENDED', 8, '#9a3412', 'middle');
+  },
+  pact() {
+    let s = `<rect width="104" height="70" fill="#eef0f5"/>` + flagUS(6, 10, 40, 26);
+    s += `<rect x="58" y="10" width="40" height="8.7" fill="#fcd116"/><rect x="58" y="18.7" width="40" height="8.7" fill="#00247d"/><rect x="58" y="27.3" width="40" height="8.7" fill="#cf142b"/>`;
+    for (let i = 0; i < 8; i++) {
+      const a = Math.PI * (0.82 - (0.64 * i) / 7);
+      s += star(78 + 7 * Math.cos(a), 26.5 - 7 * Math.sin(a), 1.3, '#fff');
+    }
+    return s + frame(58, 10, 40, 26) + label(52, 56, 'DEFENCE PACT', 8.5, '#13213c', 'middle');
+  },
+  senegal() {
+    let s = `<rect width="104" height="70" fill="#f2efe4"/><rect x="6" y="14" width="14" height="28" fill="#00853f"/><rect x="20" y="14" width="14" height="28" fill="#fdef42"/><rect x="34" y="14" width="14" height="28" fill="#e31b23"/>`;
+    s += star(27, 28.5, 6, '#00853f') + frame(6, 14, 42, 28);
+    // a party card torn in two
+    s += `<path d="M58,16 L78,16 L74,24 L79,31 L73,38 L76,46 L58,46 Z" fill="#fff" stroke="#9c907c"/><path d="M84,18 L100,18 L100,48 L82,48 L79,40 L85,33 L80,26 Z" fill="#fff" stroke="#9c907c" transform="rotate(8 92 33)"/>`;
+    return s + label(52, 62, 'PARTY SPLIT', 8.5, '#3a2a12', 'middle');
   },
   nigeria: () =>
     `<rect width="104" height="70" fill="#edf5ee"/><rect x="6" y="18" width="16" height="32" fill="#118a4c"/><rect x="22" y="18" width="16" height="32" fill="#fff"/><rect x="38" y="18" width="16" height="32" fill="#118a4c"/>` +
@@ -152,10 +172,6 @@ const TILE_ART = {
     s += label(12, 30, '1 LIGHT-DAY', 8.5, '#fff');
     return s + `<circle cx="86" cy="40" r="9" fill="#e5e7eb"/><circle cx="86" cy="40" r="3.5" fill="#9ca3af"/><line x1="93" y1="45" x2="103" y2="55" stroke="#e5e7eb" stroke-width="1.4"/><line x1="80" y1="47" x2="76" y2="60" stroke="#e5e7eb" stroke-width="1.4"/>`;
   },
-  falklands: () =>
-    `<rect width="104" height="70" fill="#d7e9f5"/><rect x="6" y="8" width="42" height="27" fill="#74acdf"/><rect x="6" y="17" width="42" height="9" fill="#fff"/><circle cx="27" cy="21.5" r="3" fill="#f6b40e"/>` + frame(6, 8, 42, 27) +
-    `<path d="M54,40 Q58,30 68,33 Q76,36 73,45 Q66,52 58,49 Q52,46 54,40 Z" fill="#b9cf95"/><path d="M76,36 Q86,28 96,33 Q103,40 97,47 Q88,53 80,49 Q74,44 76,36 Z" fill="#b9cf95"/>` +
-    label(76, 64, 'FALKLANDS', 7.5, '#1e3a5f', 'middle'),
   controller() {
     let s = `<rect width="104" height="70" fill="#1f2430"/><circle cx="92" cy="12" r="6.5" fill="#f5e7b2"/><circle cx="95" cy="10" r="5.5" fill="#1f2430"/>`;
     for (const [x, y] of [[10, 8], [40, 6], [70, 14], [60, 62], [100, 60]]) s += `<circle cx="${x}" cy="${y}" r="0.9" fill="#e5e7eb"/>`;
@@ -197,11 +213,17 @@ function mapSvg(numbered, small) {
 
 // ---------- page ----------
 const tag = (st) => `<div class="tag" style="color:${color(st.region)}"><span class="num" style="background:${color(st.region)}">${st.id}</span>${esc(REGIONS[st.region][0])} · ${esc(st.beat)}</div>`;
-const lead = (st) => `<div class="lead"><div class="art"><svg viewBox="0 6 322 128" width="322" height="128">${LEAD_ART[st.art]()}</svg></div>${tag(st)}<h2>${esc(st.head)}</h2><p>${esc(st.deck)}</p></div>`;
-const tile = (st) => `<div class="tile"><div class="art"><svg viewBox="0 0 104 70" width="104" height="70">${TILE_ART[st.art]()}</svg></div><div>${tag(st)}<h3>${esc(st.head)}</h3><p>${esc(st.deck)}</p></div></div>`;
+const lead = (st) => `<div class="lead"><div class="art"><svg viewBox="0 10 322 120" width="322" height="120">${LEAD_ART[st.art]()}</svg></div>${tag(st)}<h2>${esc(st.head)}</h2><p>${esc(st.deck)}</p></div>`;
+const tile = (st) => `<div class="tile"><div class="art"><svg viewBox="0 0 104 70" width="96" height="65">${TILE_ART[st.art]()}</svg></div><div>${tag(st)}<h3>${esc(st.head)}</h3><p>${esc(st.deck)}</p></div></div>`;
 
 const all = [...data.leads, ...data.tiles, ...data.briefs];
 const legendRegions = Object.keys(REGIONS).filter((r) => r !== 'global');
+// how many stories each region gets, drawn as one bar under the date
+const regionBar = Object.keys(REGIONS)
+  .map((r) => [r, all.filter((s) => s.region === r).length])
+  .filter(([, c]) => c)
+  .map(([r, c]) => `<span style="flex:${c} 1 0;background:${color(r)}">${esc(REGIONS[r][0])} ${c}</span>`)
+  .join('');
 
 const html = `<!doctype html><html><head><meta charset="utf-8"><style>
 *{box-sizing:border-box;margin:0;padding:0}
@@ -210,35 +232,42 @@ body{position:relative;width:1024px;height:1024px;overflow:hidden;background:#f6
 .kick{display:flex;justify-content:space-between;font:700 12.5px "Avenir Next Condensed","Avenir Next",sans-serif;letter-spacing:.16em}
 .kick b{color:#f2c14e}
 h1{font-family:ui-serif,"New York",Georgia,serif;font-weight:800;font-size:78px;line-height:1;letter-spacing:-.012em;margin:2px 0 0;white-space:nowrap;display:inline-block}
-.sub{display:flex;justify-content:space-between;font:italic 13.5px ui-serif,"New York",Georgia,serif;color:#3a3f47;padding:6px 0 6px;border-bottom:2px solid #15171c}
+.bar{display:flex;gap:2px;margin:5px 0 1px}
+.bar span{min-width:max-content;padding:2px 6px;border-radius:2px;color:#fff;text-align:center;font:700 10.5px "Avenir Next Condensed","Avenir Next",sans-serif;letter-spacing:.1em;text-transform:uppercase}
+.nums{display:flex;align-items:baseline;gap:15px;white-space:nowrap;overflow:hidden;padding:5px 0 4px;border-bottom:2px solid #15171c;font-size:11.5px;color:#3a3f47}
+.nums .h{font:700 10.5px "Avenir Next Condensed","Avenir Next",sans-serif;letter-spacing:.14em;color:#15171c}
+.nums span b{font:800 16px ui-serif,"New York",Georgia,serif;color:#b91c1c;margin-right:3px}
+.check{margin-top:7px;padding:5px 8px;border-left:3px solid #b91c1c;background:#ece2cf;font-size:10.2px;line-height:1.32;color:#3a3f47}
+.check b{color:#b91c1c;font-size:9.6px;letter-spacing:.1em;margin-right:4px}
 .leads{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding-top:9px}
 .art{border-radius:5px;overflow:hidden;line-height:0}
 .tag{display:flex;align-items:center;gap:5px;font:700 11px "Avenir Next Condensed","Avenir Next",sans-serif;letter-spacing:.08em;text-transform:uppercase;margin:6px 0 3px;white-space:nowrap}
 .num{display:inline-block;min-width:17px;height:17px;padding:0 3px;border-radius:9px;color:#fff;font:800 10.5px/17px "Avenir Next",sans-serif;text-align:center;letter-spacing:0}
 h2{font-family:ui-serif,"New York",Georgia,serif;font-weight:800;font-size:24px;line-height:1.07;letter-spacing:-.01em}
 .lead p{font-size:13.3px;line-height:1.28;color:#3a3f47;margin-top:4px}
-.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:9px 14px;margin-top:10px;padding-top:10px;border-top:1px solid #15171c55}
-.tile{display:grid;grid-template-columns:104px 1fr;gap:9px;align-items:start}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:7px 14px;margin-top:10px;padding-top:10px;border-top:1px solid #15171c55}
+.tile{display:grid;grid-template-columns:96px 1fr;gap:9px;align-items:start}
 .tile .tag{font-size:9.6px;margin:0 0 2px}.tile .num{min-width:15px;height:15px;font-size:9px;line-height:15px}
 h3{font-family:ui-serif,"New York",Georgia,serif;font-weight:700;font-size:15.6px;line-height:1.1;letter-spacing:-.005em}
 .tile p{font-size:11.2px;line-height:1.22;color:#3a3f47;margin-top:2px}
 .bottom{display:grid;grid-template-columns:${MAP_W}px minmax(0,1fr);gap:16px;margin-top:10px;padding-top:8px;border-top:2px solid #15171c}
 .lbl{font:700 11.5px "Avenir Next Condensed","Avenir Next",sans-serif;letter-spacing:.14em;margin-bottom:5px;display:flex;justify-content:space-between}
 .lbl i{font:italic 10.5px "Avenir Next",sans-serif;letter-spacing:0;color:#555}
-.legend{display:flex;flex-wrap:wrap;gap:3px 9px;font-size:10px;color:#3a3f47;margin-top:4px}
+.legend{display:flex;flex-wrap:wrap;gap:3px 8px;font-size:9.6px;color:#3a3f47;margin-top:4px}
 .legend span::before{content:"";display:inline-block;width:8px;height:8px;border-radius:4px;background:var(--c);margin-right:4px}
 ul{list-style:none;columns:2;column-gap:14px}
-li{font-size:11.4px;line-height:1.36;break-inside:avoid;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+li{font-size:11.4px;line-height:1.28;break-inside:avoid;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 li .num{min-width:16px;height:14px;font-size:8.8px;line-height:14px;margin-right:4px;vertical-align:1px;border-radius:7px}
 .foot{position:absolute;left:18px;right:18px;bottom:7px;border-top:1px solid #15171c55;padding-top:5px;font-size:10.3px;white-space:nowrap;color:#3a3f47;display:flex;justify-content:space-between}
 </style></head><body>
-<div class="mast"><div class="kick"><b>THE DAY IN WORLD NEWS</b><span>${all.length} STORIES · ${data.continents} CONTINENTS · ONE DAY</span></div><h1>${esc(data.date)}</h1></div>
-<div class="sub"><span>${esc(data.note)}</span><span>Numbers 1–${data.leads.length + data.tiles.length} are pinned on the map</span></div>
+<div class="mast"><div class="kick"><b>THE DAY IN WORLD NEWS</b><span>${all.length} STORIES · ${data.continents} CONTINENTS · ALL FROM ONE DAY</span></div><h1>${esc(data.date)}</h1><div class="bar">${regionBar}</div></div>
+<div class="nums"><b class="h">THE DAY IN NUMBERS</b>${data.numbers.map(([v, t]) => `<span><b>${esc(v)}</b>${esc(t)}</span>`).join('')}</div>
 <div class="leads">${data.leads.map(lead).join('')}</div>
 <div class="tiles">${data.tiles.map(tile).join('')}</div>
 <div class="bottom">
   <div><div class="lbl">WHERE IT HAPPENED<i>big numbers = stories above · dots = briefs</i></div>${mapSvg([...data.leads, ...data.tiles].filter((s) => s.pin), data.briefs.filter((b) => b.pin))}
-  <div class="legend">${legendRegions.map((r) => `<span style="--c:${color(r)}">${REGIONS[r][0]}</span>`).join('')}</div></div>
+  <div class="legend">${legendRegions.map((r) => `<span style="--c:${color(r)}">${REGIONS[r][0]}</span>`).join('')}</div>
+  <div class="check"><b>DATE CHECK</b>${esc(data.datecheck)}</div></div>
   <div><div class="lbl">ALSO ON WEDNESDAY 18 NOVEMBER</div><ul>${data.briefs.map((b) => `<li><span class="num" style="background:${color(b.region)}">${b.id}</span><b>${esc(b.place)}:</b> ${esc(b.text)}</li>`).join('')}</ul></div>
 </div>
 <div class="foot"><span>${esc(data.footer)}</span><span>Sources: ${esc(data.sources)} · Original drawings</span></div>
@@ -248,7 +277,7 @@ document.fonts.ready.then(() => {
   const h = document.querySelector('h1'); let f = 78;
   while (h.getBoundingClientRect().width > 988 && f > 30) h.style.fontSize = (f -= 0.5) + 'px';
   const end = Math.max(...[...document.querySelectorAll('.bottom > div, .tiles')].map((d) => d.getBoundingClientRect().bottom));
-  const clipped = [...document.querySelectorAll('li')].filter((li) => li.scrollWidth > li.clientWidth + 1).length;
+  const clipped = [...document.querySelectorAll('li, .nums, .foot')].filter((el) => el.scrollWidth > el.clientWidth + 1).length;
   const foot = document.querySelector('.foot').getBoundingClientRect().top;
   document.body.dataset.fit = Math.round(end) + '/' + Math.round(foot) + '/' + clipped;
   if (end > foot - 2 || clipped) document.body.style.background = '#ff8080';

@@ -1,9 +1,16 @@
 {
   "date": "Wednesday 18 November 2026",
-  "note": "Every story on this page happened or was first reported on 18 November 2026.",
   "footer": "Every story was reported on Wednesday 18 November 2026; disputed claims are attributed.",
   "continents": 6,
-  "sources": "AP, Reuters, AFP, BBC, Al Jazeera, NYT, DW, France 24, IMD",
+  "sources": "BBC, Al Jazeera, NYT, Guardian, DW, France 24, NPR, UN News, ABC, IMD",
+  "numbers": [
+    ["1 light-day", "Voyager 1’s distance"],
+    ["€45bn", "EU loan for Ukraine"],
+    ["3.6%", "UK inflation"],
+    ["26 yrs", "US measles-free run ends"],
+    ["60", "Houthi sites hit"]
+  ],
+  "datecheck": "Left out because they happened before Wednesday: the Crimea bridge collapse (Monday night), the Prague train crash and the Siberia plane crash.",
   "leads": [
     {
       "region": "asia", "beat": "Diplomacy", "art": "tarmac",
@@ -20,20 +27,20 @@
       "src": "https://www.bbc.co.uk/news/articles/cw4gn9jeqjq7o"
     },
     {
-      "region": "namerica", "beat": "US politics", "art": "senate",
-      "head": "Peltola wins Alaska; Democrats hold 56 seats",
-      "deck": "US networks call the last midterm race after two weeks of counting, ousting Dan Sullivan.",
-      "pin": [61.2, -149.9],
-      "src": "https://www.bbc.co.uk/news/articles/cqev3v2ygzlvo"
+      "region": "namerica", "beat": "US politics", "art": "house",
+      "head": "Democrats pick Jeffries as first Black Speaker",
+      "deck": "House Democrats back him to lead the chamber when they take control in January.",
+      "pin": [38.9, -77.0],
+      "src": "https://www.bbc.co.uk/news/articles/cmy49873dn95o"
     }
   ],
   "tiles": [
     {
-      "region": "asia", "beat": "APEC", "art": "cnru",
-      "head": "Xi and Putin vow to ‘lead’ a multipolar world",
-      "deck": "Putin calls the West ‘former hegemons’.",
-      "pin": [22.54, 114.06],
-      "src": "https://www.aljazeera.com/news/2026/11/18/president-xi-says-russia-and-china-should-lead-push-to-multipolar-world"
+      "region": "mideast", "beat": "Gaza", "art": "yellowline",
+      "head": "Israeli tanks cross Gaza’s ‘Yellow Line’",
+      "deck": "Hamas calls it a ‘flagrant’ truce breach.",
+      "pin": [31.42, 34.35],
+      "src": "https://www.bbc.co.uk/news/articles/cw8r7510degno"
     },
     {
       "region": "mideast", "beat": "Yemen", "art": "jets",
@@ -41,13 +48,6 @@
       "deck": "The rebels push towards Aden.",
       "pin": [12.8, 45.03],
       "src": "https://www.aljazeera.com/news/2026/11/18/houthis-advance-on-aden-as-saudi-coalition-targets-military-sites"
-    },
-    {
-      "region": "mideast", "beat": "Gaza", "art": "tents",
-      "head": "Board of Peace warns the Gaza truce may collapse",
-      "deck": "Report to the UN faults both sides.",
-      "pin": [31.45, 34.4],
-      "src": "https://www.aljazeera.com/news/2026/11/18/board-of-peace-warns-gaza-ceasefire-faces-imminent-collapse-without-action"
     },
     {
       "region": "europe", "beat": "Ukraine", "art": "eu",
@@ -64,11 +64,25 @@
       "src": "https://www.bbc.co.uk/news/articles/cmy498kdkx3xo"
     },
     {
-      "region": "namerica", "beat": "Markets", "art": "chip",
-      "head": "Nvidia doubles quarterly revenue to $115.8bn",
-      "deck": "It forecasts about $130bn next quarter.",
-      "pin": [37.35, -121.95],
-      "src": "https://www.aljazeera.com/economy/2026/11/18/nvidia-shoots-down-calls-for-jensen-huangs-return-amid-strong-earnings"
+      "region": "namerica", "beat": "Health", "art": "measles",
+      "head": "US loses its measles-free status after 26 years",
+      "deck": "Its worst outbreak in 35 years goes on.",
+      "pin": [38.5, -98.0],
+      "src": "https://news.sky.com/story/us-loses-measles-free-status-amid-worst-outbreak-in-35-years-13613526"
+    },
+    {
+      "region": "samerica", "beat": "Defence", "art": "pact",
+      "head": "US and Venezuela sign a defence pact",
+      "deck": "Hegseth seals it on a visit to Caracas.",
+      "pin": [10.5, -66.9],
+      "src": "https://www.dw.com/en/us-pentagon-chief-hegseth-signs-military-deal-in-venezuela/a-79985607"
+    },
+    {
+      "region": "africa", "beat": "Politics", "art": "senegal",
+      "head": "Senegal’s ruling party expels President Faye",
+      "deck": "His split with mentor Sonko is official.",
+      "pin": [14.7, -17.45],
+      "src": "https://www.france24.com/en/bassirou-diomaye-faye-excluded-from-senegal-s-ruling-party"
     },
     {
       "region": "africa", "beat": "Security", "art": "nigeria",
@@ -86,10 +100,10 @@
     },
     {
       "region": "global", "beat": "Climate", "art": "cop",
-      "head": "COP31 ministers split over the draft deal",
-      "deck": "Fossil-fuel wording divides Antalya talks.",
+      "head": "COP31 deadlocked over fossil-fuel wording",
+      "deck": "A ‘climate reality check’ is launched.",
       "pin": [36.9, 30.7],
-      "src": "https://www.riotimesonline.com/cop31-ministers-take-up-divided-draft-cover-decision/"
+      "src": "https://news.un.org/feed/view/en/story/2026/11/1168833"
     },
     {
       "region": "global", "beat": "Space", "art": "voyager",
@@ -99,49 +113,43 @@
       "src": "https://earthsky.org/space/voyager-1-1-light-day-from-earth-november-17-18-2026/"
     },
     {
-      "region": "samerica", "beat": "Argentina", "art": "falklands",
-      "head": "Argentine deputies debate Falklands bill",
-      "deck": "A royal visit is called a ‘provocation’.",
-      "pin": [-34.6, -58.38],
-      "src": "https://en.mercopress.com/"
-    },
-    {
       "region": "global", "beat": "Culture", "art": "controller",
-      "head": "GTA VI goes on sale at midnight after 13 years",
-      "deck": "Critics hail a ‘masterpiece’.",
+      "head": "GTA VI launches after 13 years",
+      "deck": "It breaks pre-order records.",
       "pin": null,
-      "src": "https://aa.com.tr/en/world/morning-briefing-nov-18-2026/4128568"
+      "src": "https://www.aljazeera.com/video/newsfeed/2026/11/18/gta-6-launches-after-13-year-wait-breaking-pre-order-records"
     }
   ],
   "briefs": [
-    { "region": "asia", "place": "Manila", "text": "Trump and Marcos announce trade deal", "pin": [14.6, 121.0] },
-    { "region": "asia", "place": "Shenzhen", "text": "Xi meets Japan’s Takaichi amid feud", "pin": null },
-    { "region": "asia", "place": "Japan", "text": "Jets scramble as Russian bombers fly by", "pin": [35.7, 139.7] },
-    { "region": "asia", "place": "N. Korea", "text": "IAEA says enrichment annex built", "pin": [39.8, 125.8] },
-    { "region": "asia", "place": "Myanmar", "text": "Min Aung Hlaing to review ASEAN ties", "pin": [19.75, 96.1] },
-    { "region": "asia", "place": "Thailand", "text": "Mekong arsenic traced to Myanmar", "pin": [20.3, 100.1] },
-    { "region": "asia", "place": "Seoul", "text": "AI cheating scandal upends exam season", "pin": [37.57, 126.98] },
-    { "region": "asia", "place": "India", "text": "Gandhi warns of a ‘looming crisis’", "pin": null },
-    { "region": "mideast", "place": "West Bank", "text": "Israel delays E1 settlement contracts", "pin": [31.9, 35.25] },
-    { "region": "mideast", "place": "Baghdad", "text": "Iran’s Quds chief Qaani holds talks", "pin": [33.3, 44.4] },
-    { "region": "europe", "place": "Krasnodar", "text": "Ukraine targets Russian oil refineries", "pin": [45.0, 39.0] },
-    { "region": "europe", "place": "IAEA", "text": "Grossi backs US–Saudi nuclear deal", "pin": [48.2, 16.4] },
-    { "region": "europe", "place": "Berlin", "text": "Coalition agrees electricity tax cut", "pin": [52.5, 13.4] },
-    { "region": "europe", "place": "Ireland", "text": "Man accused of wrecking US plane", "pin": [52.7, -8.9] },
-    { "region": "europe", "place": "Paris", "text": "Police stage a protest of their own", "pin": [48.86, 2.35] },
-    { "region": "europe", "place": "UK", "text": "Wild birds at record low, regulator says", "pin": null },
-    { "region": "europe", "place": "North Sea", "text": "EnQuest says it will quit UK basin", "pin": null },
-    { "region": "africa", "place": "Accra", "text": "$60m presidential jet sparks outrage", "pin": [5.6, -0.19] },
-    { "region": "africa", "place": "Cairo", "text": "Mada Masr editor Attalah faces retrial", "pin": [30.04, 31.24] },
-    { "region": "namerica", "place": "Canada", "text": "Carney and Trump hold trade talks", "pin": null },
-    { "region": "namerica", "place": "Waymo", "text": "Robotaxis pulled off US freeways", "pin": null },
-    { "region": "namerica", "place": "US", "text": "Rubio: ‘zero evidence’ tech outages linked", "pin": [38.9, -77.0] },
-    { "region": "samerica", "place": "Ecuador", "text": "Fishermen sue US over a drone strike", "pin": [-2.2, -79.9] },
-    { "region": "samerica", "place": "Argentina", "text": "Milei predicts outright 2027 win", "pin": null },
-    { "region": "oceania", "place": "PNG", "text": "Rio Tinto to pay $250m over mine damage", "pin": [-6.2, 155.5] },
-    { "region": "oceania", "place": "Cricket", "text": "Bancroft reopens ‘sandpapergate’", "pin": [-33.9, 151.2] },
-    { "region": "oceania", "place": "Hobart", "text": "Duckett ton seals England ODI series", "pin": [-42.9, 147.3] },
-    { "region": "global", "place": "Tech", "text": "AI start-up finds critical flaw in Java", "pin": null },
-    { "region": "global", "place": "Music", "text": "Glastonbury 2027: Cher in legends slot", "pin": null }
+    { "region": "asia", "place": "Shenzhen", "text": "Xi, Putin vow a ‘multipolar’ world", "pin": null, "src": "https://www.aljazeera.com/news/2026/11/18/president-xi-says-russia-and-china-should-lead-push-to-multipolar-world" },
+    { "region": "asia", "place": "Shenzhen", "text": "Xi meets Japan’s Takaichi amid feud", "pin": null, "src": "https://www.nytimes.com/2026/11/18/world/asia/xi-jinping-china-sanae-takaichi-japan.html" },
+    { "region": "asia", "place": "N. Korea", "text": "IAEA says enrichment plant expanded", "pin": [39.8, 125.8], "src": "https://www.dw.com/en/north-korea-expanded-uranium-enrichment-plant-says-iaea-head/a-79982758" },
+    { "region": "asia", "place": "Manila", "text": "Trump and Marcos announce trade deal", "pin": [14.6, 121.0], "src": "https://www.aljazeera.com/news/2026/11/18/donald-trump-meets-longtime-friend-imelda-marcos-during-philippines-visit" },
+    { "region": "asia", "place": "Mumbai", "text": "William and Kate at Earthshot awards", "pin": [19.07, 72.88], "src": "https://www.bbc.co.uk/news/videos/cmwy97rj83n1o" },
+    { "region": "mideast", "place": "Lebanon", "text": "US hits Hezbollah with new sanctions", "pin": [33.9, 35.5], "src": "https://www.aljazeera.com/news/2026/11/18/us-steps-up-pressure-on-iran-backed-hezbollah-with-new-sanctions" },
+    { "region": "mideast", "place": "Baghdad", "text": "Six French ISIL recruits jailed for life", "pin": [33.3, 44.4], "src": "https://www.aljazeera.com/news/2026/11/18/iraq-sentences-six-french-nationals-to-life-in-prison-for-joining-isil" },
+    { "region": "mideast", "place": "West Bank", "text": "Israel delays E1 settlement contracts", "pin": [31.9, 35.25], "src": "https://www.theguardian.com/world/2026/nov/18/israel-construction-contracts-e1-west-bank-settlement-uk-sanctions" },
+    { "region": "europe", "place": "Odesa", "text": "Russian strikes kill at least four", "pin": [46.48, 30.73], "src": "https://www.aljazeera.com/video/newsfeed/2026/11/18/four-killed-as-russian-strikes-hit-ukraines-odesa" },
+    { "region": "europe", "place": "Krasnodar", "text": "Ukraine targets Russian oil refineries", "pin": [45.0, 39.0], "src": "https://www.dw.com/en/ukraine-kyiv-targets-krasnodar-refineries-after-felling-kerch-bridge/live-79976877" },
+    { "region": "europe", "place": "Berlin", "text": "‘Coalition of the willing’ meets on Ukraine", "pin": [52.5, 13.4], "src": "https://www.dw.com/en/coalition-of-the-willing-meets-in-berlin-europe-remains-committed-to-ukraine/a-79974996" },
+    { "region": "europe", "place": "EU", "text": "Five states strike Rwanda deportation deal", "pin": null, "src": "https://www.cbsnews.com/news/europe-migrants-eu-5-nations-plan-return-hub-asylum-seekers-rwanda/" },
+    { "region": "europe", "place": "Ireland", "text": "Man accused of wrecking US plane", "pin": [52.7, -8.9], "src": "https://www.nytimes.com/2026/11/18/world/europe/man-charged-ireland-shannon-us-military-plane.html" },
+    { "region": "europe", "place": "Football", "text": "Ex-Spain star Juan Mata retires at 38", "pin": null, "src": "https://www.bbc.co.uk/sport/football/articles/c8p3vwe1rrzqo" },
+    { "region": "africa", "place": "Accra", "text": "$60m presidential jet sparks outrage", "pin": [5.6, -0.19], "src": "https://www.bbc.co.uk/news/articles/ck792dez8dp3o" },
+    { "region": "africa", "place": "Malawi", "text": "Fuel crisis has no end date, minister says", "pin": [-13.96, 33.79], "src": "https://allafrica.com/stories/202611180202.html" },
+    { "region": "africa", "place": "Ethiopia", "text": "905,000 more may fall into poverty", "pin": [9.0, 38.75], "src": "https://allafrica.com/stories/202611180198.html" },
+    { "region": "namerica", "place": "Wall St", "text": "Anthropic prices its IPO at $83 a share", "pin": [40.7, -74.0], "src": "https://www.theguardian.com/technology/2026/nov/18/anthropic-share-price-stock-market-ipo" },
+    { "region": "namerica", "place": "Fed", "text": "Minutes point to more rate rises", "pin": null, "src": "https://www.nytimes.com/2026/11/18/business/federal-reserve-rate-increase-october-meeting.html" },
+    { "region": "namerica", "place": "FAA", "text": "Duffy blames contractor for ground stop", "pin": null, "src": "https://www.cbsnews.com/news/ground-stop-l3harris-system-outage/" },
+    { "region": "namerica", "place": "Waymo", "text": "Robotaxis pulled off all US freeways", "pin": null, "src": "https://www.bbc.co.uk/news/articles/cmy86pp336qlo" },
+    { "region": "namerica", "place": "Canada", "text": "Carney and Trump hold trade talks", "pin": null, "src": "https://www.nytimes.com/2026/11/18/world/canada/trump-carney-meeting-asia-us-canada-trade.html" },
+    { "region": "namerica", "place": "Florida", "text": "Pastor convicted in Haiti leader’s killing", "pin": [25.8, -80.2], "src": "https://www.cbsnews.com/news/haitian-president-jovenel-moise-assassination-conviction/" },
+    { "region": "samerica", "place": "Colombia", "text": "No to joint anti-cartel raids with US", "pin": [4.7, -74.07], "src": "https://www.nytimes.com/2026/11/18/world/americas/colombia-us-joint-military.html" },
+    { "region": "samerica", "place": "Argentina", "text": "Deputies debate a Falklands bill", "pin": [-34.6, -58.38], "src": "https://en.mercopress.com/2026/11/18/argentina-s-lower-house-debates-falklands-sovereignty-bill-today-with-one-chapter-short-of-votes" },
+    { "region": "oceania", "place": "PNG", "text": "Rio Tinto to pay $250m over mine damage", "pin": [-6.2, 155.5], "src": "https://www.nytimes.com/2026/11/18/world/asia/rio-tinto-papua-new-guinea-mine.html" },
+    { "region": "oceania", "place": "Cricket", "text": "Bancroft reopens ‘sandpapergate’", "pin": [-33.9, 151.2], "src": "https://www.abc.net.au/news/2026-11-18/cameron-bancroft-says-australian-players-knew-about-sandpaper/107401286" },
+    { "region": "oceania", "place": "Hobart", "text": "Duckett ton seals England ODI series", "pin": [-42.9, 147.3], "src": "https://www.abc.net.au/news/2026-11-18/australia-vs-england-third-odi-hobart/107399944" },
+    { "region": "global", "place": "Pew", "text": "Muslims to outnumber Christians by 2035", "pin": null, "src": "https://www.dw.com/en/muslims-to-outnumber-christians-by-2035-research-shows/a-79984307" },
+    { "region": "global", "place": "Health", "text": "WHO warns antibiotics are failing", "pin": null, "src": "https://news.un.org/feed/view/en/story/2026/11/1168832" }
   ]
 }
