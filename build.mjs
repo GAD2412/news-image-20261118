@@ -188,25 +188,25 @@ const rings = land.features.flatMap((f) => (f.geometry.type === 'Polygon' ? [f.g
 const landPath = rings.map((ring) => 'M' + ring.map(([lon, lat]) => proj([lat, lon]).map((v) => v.toFixed(1)).join(',')).join('L') + 'Z').join('');
 
 function mapSvg(numbered, small) {
-  let s = `<rect width="${MAP_W}" height="${MAP_H}" fill="#dfeaf0"/><path d="${landPath}" fill="#e6dcc6" stroke="#cbbd9f" stroke-width="0.5"/>`;
+  let s = `<rect width="${MAP_W}" height="${MAP_H}" fill="#b9d8e8"/><path d="${landPath}" fill="#c3d7a6" stroke="#8fac74" stroke-width="0.6"/>`;
   for (const b of small) {
     const [x, y] = proj(b.pin);
-    s += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="2.6" fill="${color(b.region)}" stroke="#fff" stroke-width="0.8"/>`;
+    s += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="3.1" fill="${color(b.region)}" stroke="#fff" stroke-width="0.9"/>`;
   }
   const placed = [];
   for (const st of numbered) {
     const [tx, ty] = proj(st.pin);
     let x = tx, y = ty, k = 0;
-    while (placed.some(([px, py]) => Math.hypot(px - x, py - y) < 15.5) && k < 16) {
+    while (placed.some(([px, py]) => Math.hypot(px - x, py - y) < 17.5) && k < 16) {
       k++;
       const a = -Math.PI / 2 + k * 1.15;
-      x = tx + 16 * Math.ceil(k / 5) * Math.cos(a);
-      y = ty + 16 * Math.ceil(k / 5) * Math.sin(a);
+      x = tx + 18 * Math.ceil(k / 5) * Math.cos(a);
+      y = ty + 18 * Math.ceil(k / 5) * Math.sin(a);
     }
     placed.push([x, y]);
-    if (k) s += `<line x1="${tx.toFixed(1)}" y1="${ty.toFixed(1)}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}" stroke="#333" stroke-width="0.9"/><circle cx="${tx.toFixed(1)}" cy="${ty.toFixed(1)}" r="1.8" fill="#333"/>`;
-    s += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="7.4" fill="${color(st.region)}" stroke="#fff" stroke-width="1.2"/>`;
-    s += `<text x="${x.toFixed(1)}" y="${(y + 3.2).toFixed(1)}" text-anchor="middle" font-size="9" font-weight="800" fill="#fff">${st.id}</text>`;
+    if (k) s += `<line x1="${tx.toFixed(1)}" y1="${ty.toFixed(1)}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}" stroke="#1f2937" stroke-width="1"/><circle cx="${tx.toFixed(1)}" cy="${ty.toFixed(1)}" r="2" fill="#1f2937"/>`;
+    s += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="8.4" fill="${color(st.region)}" stroke="#fff" stroke-width="1.4"/>`;
+    s += `<text x="${x.toFixed(1)}" y="${(y + 3.6).toFixed(1)}" text-anchor="middle" font-size="10" font-weight="800" fill="#fff">${st.id}</text>`;
   }
   return `<svg viewBox="0 0 ${MAP_W} ${MAP_H}" width="${MAP_W}" height="${MAP_H}" style="border-radius:4px">${s}</svg>`;
 }
@@ -248,8 +248,8 @@ h2{font-family:ui-serif,"New York",Georgia,serif;font-weight:800;font-size:24px;
 .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:7px 14px;margin-top:10px;padding-top:10px;border-top:1px solid #15171c55}
 .tile{display:grid;grid-template-columns:96px 1fr;gap:9px;align-items:start}
 .tile .tag{font-size:9.6px;margin:0 0 2px}.tile .num{min-width:15px;height:15px;font-size:9px;line-height:15px}
-h3{font-family:ui-serif,"New York",Georgia,serif;font-weight:700;font-size:15.6px;line-height:1.1;letter-spacing:-.005em}
-.tile p{font-size:11.2px;line-height:1.22;color:#3a3f47;margin-top:2px}
+h3{font-family:ui-serif,"New York",Georgia,serif;font-weight:700;font-size:16.4px;line-height:1.08;letter-spacing:-.008em}
+.tile p{font-size:11.6px;line-height:1.22;color:#3a3f47;margin-top:2px}
 .bottom{display:grid;grid-template-columns:${MAP_W}px minmax(0,1fr);gap:16px;margin-top:10px;padding-top:8px;border-top:2px solid #15171c}
 .lbl{font:700 11.5px "Avenir Next Condensed","Avenir Next",sans-serif;letter-spacing:.14em;margin-bottom:5px;display:flex;justify-content:space-between}
 .lbl i{font:italic 10.5px "Avenir Next",sans-serif;letter-spacing:0;color:#555}
